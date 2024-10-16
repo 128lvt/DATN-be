@@ -1,5 +1,6 @@
 package com.app.models;
 
+import jakarta.persistence.*;
 import lombok.*;
 
 @Entity

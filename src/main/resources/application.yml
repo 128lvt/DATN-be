@@ -1,0 +1,22 @@
+server:
+  port: 8080
+spring:
+  datasource:
+    url: jdbc:mysql://sql.freedb.tech:3306/freedb_productdb?useSSL=false&serverTimeZone=UTC
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: freedb_user000000
+    password: c@BM8pyyr!BBh$z
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+        format_sql: true
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+api:
+  prefix: api/v1

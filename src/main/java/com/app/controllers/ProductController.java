@@ -6,7 +6,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("api/v1/product")
+@RequestMapping("${api.prefix}/product")
 public class ProductController {
     @PostMapping("")
     public ResponseEntity<String> createProduct(/*@Valid *//*@RequestBody ProductDTO ProductDTO*/) {
