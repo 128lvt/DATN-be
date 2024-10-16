@@ -2,8 +2,6 @@
 
     import jakarta.persistence.*;
     import lombok.*;
-    import org.apache.catalina.User;
-
     import java.time.LocalDateTime;
     import java.util.Date;
 
