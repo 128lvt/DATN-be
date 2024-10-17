@@ -2,7 +2,6 @@ package com.app.controllers;
 
 import java.util.List;
 
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
@@ -21,14 +20,14 @@ public class UserController {
     @PostMapping("/register")
     public ResponseEntity<?> createUser(@Valid @RequestBody UserDTO userDTO, BindingResult result) {
         try {
-            if (result.hasErrors()){
+            if (result.hasErrors()) {
                 List<String> errorMassages = result.getFieldErrors()
                         .stream()
                         .map(FieldError::getDefaultMessage)
                         .toList();
                 return ResponseEntity.badRequest().body(errorMassages);
             }
-            if (!userDTO.getPassWord().equals(userDTO.getRetypePassword())){
+            if (!userDTO.getPassword().equals(userDTO.getRetypePassword())) {
                 return ResponseEntity.badRequest().body("Passwords do not match");
             }
             return ResponseEntity.ok("Register successful");
@@ -38,7 +37,7 @@ public class UserController {
     }
 
     @PostMapping("/login")
-    public ResponseEntity<String> login(/*@Valid *//*@RequestBody UserLoginDTO userloginDTO*/) {
+    public ResponseEntity<String> login(/* @Valid *//* @RequestBody UserLoginDTO userloginDTO */) {
         return ResponseEntity.ok("some token");
     }
 }
