@@ -1,65 +1,66 @@
-    package com.app.models;
+package com.project.shopapp.models;
 
-    import jakarta.persistence.*;
-    import lombok.*;
-    import java.time.LocalDateTime;
-    import java.util.Date;
+import jakarta.persistence.*;
+import lombok.*;
 
-    @Entity
-    @Table(name ="orders")
-    @Getter
-    @Setter
-    @AllArgsConstructor
-    @NoArgsConstructor
-    public class Order {
-        @Id
-        @GeneratedValue(strategy = GenerationType.IDENTITY)
-        private Long id;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.Date;
 
-        @ManyToOne
-        @JoinColumn(name = "user_id")
-        private User user;
+@Entity
+@Table(name = "orders")
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
+public class Order {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-        @Column(name = "fullname", length = 100)
-        private String fullname;
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
 
-        @Column(name = "email", length = 100)
-        private String email;
+    @Column(name = "fullname", length = 100)
+    private String fullName;
 
-        @Column(name = "phone_number",nullable = false, length = 100)
-        private String phone_Number;
+    @Column(name = "email", length = 100)
+    private String email;
 
-        @Column(name = "address", length = 100)
-        private String address;
+    @Column(name = "phone_number", nullable = false, length = 100)
+    private String phoneNumber;
 
-        @Column(name = "note", length = 100)
-        private String note;
+    @Column(name = "address", length = 100)
+    private String address;
 
-        @Column(name = "order_date")
-        private LocalDateTime orderDate;
+    @Column(name = "note", length = 100)
+    private String note;
 
-        @Column(name = "status")
-        private String status;
+    @Column(name = "order_date")
+    private Date orderDate;
 
-        @Column(name = "total_money")
-        private Integer total_Money;
+    @Column(name = "status")
+    private String status;
 
-        @Column(name = "shipping_method")
-        private String shippingMethod;
+    @Column(name = "total_money")
+    private Float totalMoney;
 
-        @Column(name = "shipping_address")
-        private String shippingAddress;
+    @Column(name = "shipping_method")
+    private String shippingMethod;
 
-        @Column(name = "shipping_date")
-        private Date shippingDate;
+    @Column(name = "shipping_address")
+    private String shippingAddress;
 
-        @Column(name = "tracking_number")
-        private String trackingNumber;
+    @Column(name = "shipping_date")
+    private LocalDate shippingDate;
 
-        @Column(name = "payment_method")
-        private String paymentMethod;
+    @Column(name = "tracking_number")
+    private String trackingNumber;
 
+    @Column(name = "payment_method")
+    private String paymentMethod;
 
-        @Column(name = "acctive")
-        private Boolean acctive; // thuoc ve admin
-    }
+    @Column(name = "active")
+    private Boolean active;
+}
