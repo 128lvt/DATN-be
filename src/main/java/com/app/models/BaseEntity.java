@@ -1,4 +1,4 @@
-package com.project.shopapp.models;
+package com.app.models;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.MappedSuperclass;

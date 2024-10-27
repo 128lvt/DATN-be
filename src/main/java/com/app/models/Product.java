@@ -1,8 +1,8 @@
-package com.project.shopapp.models;
+package com.app.models;
 
+import com.app.serializer.DecimalJsonSerializer;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import com.project.shopapp.serializers.DecimalJsonSerializer;
 import jakarta.persistence.*;
 import lombok.*;
 
