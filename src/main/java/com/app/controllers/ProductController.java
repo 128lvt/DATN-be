@@ -4,11 +4,13 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import com.app.responses.Response;
+
 @RestController
-@RequestMapping("${api.prefix}/product")
+@RequestMapping("${api.prefix}/products")
 public class ProductController {
-    @PostMapping("")
-    public ResponseEntity<String> createProduct(/*@Valid *//*@RequestBody ProductDTO ProductDTO*/) {
+    @PostMapping
+    public ResponseEntity<String> createProduct(/* @Valid *//* @RequestBody ProductDTO ProductDTO */) {
         try {
             return ResponseEntity.ok("Product created");
         } catch (Exception e) {
@@ -16,12 +18,18 @@ public class ProductController {
         }
     }
 
-    @GetMapping("")
-    public ResponseEntity<String> getProduct(
+    @GetMapping
+    public ResponseEntity<?> getProduct(
             @RequestParam("page") int page,
-            @RequestParam(" limit") int limit
-    ) {
-        return ResponseEntity.ok("getProduct");
+            @RequestParam("limit") int limit) {
+        return ResponseEntity
+                .ok()
+                .body(Response
+                        .builder()
+                        .status("success")
+                        .message("Product list")
+                        .data(null)
+                        .build());
     }
 
     @GetMapping("/{id}")

@@ -1,4 +1,4 @@
-package dtos;
+package com.app.dtos;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.validation.constraints.*;
