@@ -47,11 +47,14 @@ public class ProductService implements IProductService {
     public Product updateProduct(long id, ProductDTO productDTO)
             throws Exception {
         Product existingProduct = getProductById(id);
-        existingProduct.setName(productDTO.getName());
-        existingProduct.setPrice(productDTO.getPrice());
-        existingProduct.setThumbnail(productDTO.getThumbnail());
-        existingProduct.setDescription(productDTO.getDescription());
-        return productRepository.save(existingProduct);
+        if(existingProduct != null) {
+            existingProduct.setName(productDTO.getName());
+            existingProduct.setPrice(productDTO.getPrice());
+            existingProduct.setThumbnail(productDTO.getThumbnail());
+            existingProduct.setDescription(productDTO.getDescription());
+            return productRepository.save(existingProduct);
+        }
+        return null;
     }
 
     @Override
