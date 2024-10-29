@@ -13,6 +13,7 @@ import java.util.Date;
 @Builder
 @Getter
 @Setter
+@Builder
 public class User extends com.project.shopapp.models.BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
