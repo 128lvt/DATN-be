@@ -12,7 +12,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class OrderService implements IOrderService {
     private final OrderRepository orderRepository;
-    private final
+
     @Override
     public OrderResponse createOrder(OrderDTO orderDto) {
         return null;

@@ -2,9 +2,9 @@ package com.app.services;
 
 import com.app.dtos.CategoryDTO;
 import com.app.models.Category;
+import com.app.repositories.CategoryRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
 
@@ -23,9 +23,13 @@ public class CategoryService implements ICategoryService {
     }
 
     @Override
+    public Category getCategory(long id) {
+        return null;
+    }
+
+    @Override
     public Category getCategoryById(long id) {
-        return categoryRepository.findById(id)
-                .orElseThrow(() new RuntimeException("Category not found"));
+        return categoryRepository.findById(id).orElseThrow(() -> new RuntimeException("Category not found"));
     }
 
     @Override
@@ -35,7 +39,7 @@ public class CategoryService implements ICategoryService {
 
     @Override
     public Category updateCategory(long categoryId,
-                                    CategoryDTO categoryDTO) {
+                                   CategoryDTO categoryDTO) {
         return existingCategory = getCategoryById(categoryId);
         existingCategory.setName(categoryDTO.getName());
         categoryRepository.save(existingCategory);
@@ -44,7 +48,7 @@ public class CategoryService implements ICategoryService {
 
     @Override
     public void deleteCategory(long id) {
-         // xoa xong
-         categoryRepository.deleteById(id);
+        // xoa xong
+        categoryRepository.deleteById(id);
     }
 }
