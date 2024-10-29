@@ -13,7 +13,8 @@ import java.util.Date;
 @Builder
 @Getter
 @Setter
-public class User extends BaseEntity {
+@Builder
+public class User extends com.project.shopapp.models.BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -37,12 +38,12 @@ public class User extends BaseEntity {
     private Date dateOfBirth;
 
     @Column(name = "facebook_account_id", length = 50)
-    private String facebookAccountId;
+    private int facebookAccountId;
 
     @Column(name = "google_account_id", length = 50)
-    private String googleAccountId;
+    private int googleAccountId;
 
     @ManyToOne
     @JoinColumn(name = "role_id")
-    private Role role;
+    private com.project.shopapp.models.Role role;
 }
