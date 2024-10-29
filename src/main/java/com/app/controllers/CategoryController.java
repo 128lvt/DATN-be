@@ -1,6 +1,8 @@
 package com.app.controllers;
 
 import com.app.dtos.CategoryDTO;
+import com.app.models.Category;
+import com.app.services.CategoryService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -22,13 +24,15 @@ import static org.hibernate.Hibernate.map;
 //Dependency Injection
 @RequiredArgsConstructor
 public class CategoryController {
+    private final CategoryService categoryService;
     // hien tat ca cac categories
     @GetMapping("")
-    public ResponseEntity<String> getAllCategories(
+    public ResponseEntity<List<Category>> getAllCategories(
             @RequestParam("page") int page,
             @RequestParam("limit") int limit
     ){
-        return ResponseEntity.ok(String.format("getAllCategories: page=%d, limit=%d", page, limit));
+        List<Category>categories = categoryService.getAllCategories();
+        return ResponseEntity.ok(categories);
     }
     @PostMapping("")
     //neu tham so truyen vao 1 object thi sao ?=> data transfer object = request object
@@ -42,6 +46,20 @@ public class CategoryController {
             .toList();
             return ResponseEntity.badRequest().body(errorsMessage);
         }
-        return ResponseEntity.ok(body:"This is insertCategory"+categoryDTO)
+        categoryService.createCategory(categoryDTO);
+        return ResponseEntity.ok(body:"Insert category successfully")
+    }
+    PutMapping("/{id}")
+        public ResponseEntity<String> updateCategory(
+                @PathVariable Long id,
+                @Valid @RequestBody CategoryDTO categoryDTO
+        ){
+            categoryService.updateCategory(id, categoryDTO);
+            return  ResponseEntity.ok(body: "Update category successfully ");
+        }
+    @DeleteMapping("/{id}")
+    public ResponseEntity<String> deleteCategory(@PathVariable Long id){
+        categoryService.deleteCategory(id);
+        return  ResponseEntity.ok(body: "Delete category with id"+id+" successfully");
     }
 }
