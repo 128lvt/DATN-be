@@ -18,4 +18,5 @@ public interface IProductService {
     void deleteProduct(long id);
 
     boolean existsByName(String name);
+    void deleteAllProducts();
 }
