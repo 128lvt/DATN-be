@@ -1,13 +1,9 @@
 package com.app.models;
 
-import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
 @Builder
 public class OrderStatus {
     public static final String PENDING = "pending";

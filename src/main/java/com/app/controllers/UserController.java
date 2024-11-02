@@ -1,6 +1,7 @@
 package com.app.controllers;
 
 import com.app.dtos.UserDTO;
+import com.app.dtos.UserLoginDTO;
 import com.app.services.IUserService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -19,6 +20,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class UserController {
     private final IUserService userService;
+
     @PostMapping("/register")
     public ResponseEntity<?> createUser(@Valid @RequestBody UserDTO userDTO, BindingResult result) {
         try {
@@ -41,8 +43,8 @@ public class UserController {
 
     @PostMapping("/login")
     public ResponseEntity<String> login(
-    @Valid  @RequestBody UserLoginDTO userloginDTO ) {
+            @Valid @RequestBody UserLoginDTO userloginDTO) {
         String toke = userService.login(userloginDTO.getPhoneNumber(), userloginDTO.getPassword());
-        return ResponseEntity.ok(token);
+        return ResponseEntity.ok("");
     }
 }

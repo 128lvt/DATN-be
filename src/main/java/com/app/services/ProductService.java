@@ -1,8 +1,10 @@
 package com.app.services;
 
 import com.app.dtos.ProductDTO;
+import com.app.exceptions.DataNotFoundException;
 import com.app.models.Category;
 import com.app.models.Product;
+import com.app.repositories.CategoryRepository;
 import com.app.repositories.ProductRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
@@ -16,12 +18,13 @@ import java.util.Optional;
 public class ProductService implements IProductService {
     private final ProductRepository productRepository;
     private final CategoryRepository categoryRepository;
+
     @Override
     public Product createProduct(ProductDTO productDTO) throws DataNotFoundException {
-        Category existingCategory = categoryRepository.findById(ProductDTO.getCategoryId())
+        Category existingCategory = categoryRepository.findById(productDTO.getCategoryId())
                 .orElseThrow(() ->
                         new DataNotFoundException(
-                                "Cannot find category with ID: "+productDTO.getCategoryId()));
+                                "Cannot find category with ID: " + productDTO.getCategoryId()));
         Product newProduct = Product.builder()
                 .name(productDTO.getName())
                 .price(productDTO.getPrice())
@@ -35,7 +38,7 @@ public class ProductService implements IProductService {
     public Product getProductById(long productId) throws Exception {
         return productRepository.findById(productId)
                 .orElseThrow(() -> new DataNotFoundException(
-                        "Cannot find this product with ID: ="+productId ));
+                        "Cannot find this product with ID: =" + productId));
     }
 
     @Override
@@ -47,7 +50,7 @@ public class ProductService implements IProductService {
     public Product updateProduct(long id, ProductDTO productDTO)
             throws Exception {
         Product existingProduct = getProductById(id);
-        if(existingProduct != null) {
+        if (existingProduct != null) {
             existingProduct.setName(productDTO.getName());
             existingProduct.setPrice(productDTO.getPrice());
             existingProduct.setThumbnail(productDTO.getThumbnail());
