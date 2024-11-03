@@ -47,7 +47,7 @@ public class CategoryController {
             return ResponseEntity.badRequest().body(errorsMessage);
         }
         categoryService.createCategory(categoryDTO);
-        return ResponseEntity.ok(body:"Insert category successfully")
+        return ResponseEntity.ok(body:"Insert category successfullly")
     }
     PutMapping("/{id}")
         public ResponseEntity<String> updateCategory(
