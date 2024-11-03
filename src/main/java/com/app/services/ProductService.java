@@ -4,6 +4,7 @@ import com.app.dtos.ProductDTO;
 import com.app.exceptions.DataNotFoundException;
 import com.app.models.Category;
 import com.app.models.Product;
+import com.app.models.ProductImage;
 import com.app.repositories.CategoryRepository;
 import com.app.repositories.ProductRepository;
 import lombok.RequiredArgsConstructor;
