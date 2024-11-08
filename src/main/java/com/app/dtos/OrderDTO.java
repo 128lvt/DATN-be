@@ -5,6 +5,8 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 import lombok.*;
 
+import java.util.Date;
+
 @Data
 @Builder
 @AllArgsConstructor
@@ -39,6 +41,9 @@ public class OrderDTO {
 
     @JsonProperty("shipping_address")
     private String shippingAddress;
+
+    @JsonProperty("shipping_date")
+    private Date shippingDate;
 
     @JsonProperty("payment_method")
     private String paymentMethod;
