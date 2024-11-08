@@ -10,11 +10,10 @@ import java.util.Date;
 @Table(name = "users")
 @AllArgsConstructor
 @NoArgsConstructor
-@Builder
 @Getter
 @Setter
 @Builder
-public class User extends com.project.shopapp.models.BaseEntity {
+public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -45,5 +44,5 @@ public class User extends com.project.shopapp.models.BaseEntity {
 
     @ManyToOne
     @JoinColumn(name = "role_id")
-    private com.project.shopapp.models.Role role;
+    private Role role;
 }
