@@ -1,4 +1,4 @@
-package com.project.shopapp.component;
+package com.app.component;
 
 
 import com.app.models.User;
