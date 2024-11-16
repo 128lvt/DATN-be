@@ -18,4 +18,10 @@ public class Role {
     private Long id;
 
     private String name;
+
+    public static String ADMIN = "ADMIN";
+
+    public static String USER = "USER";
+
+    public static String DEV = "DEV";
 }
