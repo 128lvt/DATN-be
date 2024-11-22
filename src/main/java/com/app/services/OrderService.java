@@ -57,6 +57,14 @@ public class OrderService implements IOrderService {
         orderRepository.save(order);
     }
 
+    public void hardDelete(Long id) {
+        orderRepository.deleteById(id);
+    }
+
+    public List<Order> getAllOrders() {
+        return (List<Order>) orderRepository.findAll();
+    }
+
     @Override
     public List<Order> findByUserId(Long id) {
         return orderRepository.findByUserId(id);

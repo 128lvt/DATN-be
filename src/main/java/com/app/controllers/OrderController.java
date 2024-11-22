@@ -70,6 +70,11 @@ public class OrderController {
         }
     }
 
+    @GetMapping
+    public ResponseEntity<?> getAllOrders() {
+        return ResponseEntity.ok().body(Response.success(orderService.getAllOrders()));
+    }
+
     @DeleteMapping("/{id}")
     public ResponseEntity<?> deleteOrder(@Valid @PathVariable Long id) {
         // cap nhat truong active
