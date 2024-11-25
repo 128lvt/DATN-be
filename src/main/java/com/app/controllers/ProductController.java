@@ -237,7 +237,7 @@ public class ProductController {
             @RequestParam(value = "maxPrice", required = false) Double maxPrice,
             @RequestParam(value = "description", required = false) String description,
             @RequestParam(value = "categoryIds", required = false) List<Long> categoryIds,
-
+            @RequestParam(value = "sortOrder", defaultValue = "-1") String sortOrder,
             @RequestParam("page") int page,
             @RequestParam("limit") int limit) {
 
