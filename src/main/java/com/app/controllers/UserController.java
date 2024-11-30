@@ -2,7 +2,10 @@ package com.app.controllers;
 
 import com.app.dtos.UserDTO;
 import com.app.dtos.UserLoginDTO;
+import com.app.responses.Response;
+import com.app.services.EmailService;
 import com.app.services.IUserService;
+import com.app.services.TokenService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -20,31 +23,31 @@ import java.util.List;
 @RequiredArgsConstructor
 public class UserController {
     private final IUserService userService;
+    private final TokenService tokenService;
+    private final EmailService emailService;
+
 
     @PostMapping("/register")
-    public ResponseEntity<?> createUser(@Valid @RequestBody UserDTO userDTO, BindingResult result) {
+    public ResponseEntity<?> createUser(@Valid @RequestBody UserDTO userDTO) {
         try {
-            if (result.hasErrors()) {
-                List<String> errorMassages = result.getFieldErrors()
-                        .stream()
-                        .map(FieldError::getDefaultMessage)
-                        .toList();
-                return ResponseEntity.badRequest().body(errorMassages);
-            }
             if (!userDTO.getPassword().equals(userDTO.getRetypePassword())) {
-                return ResponseEntity.badRequest().body("Passwords do not match");
+                return ResponseEntity.badRequest().body("Password does not match");
             }
-            userService.createUser(userDTO);
-            return ResponseEntity.ok("Register successful");
+            return ResponseEntity.ok().body(Response.success(userService.createUser(userDTO)));
         } catch (Exception e) {
-            return ResponseEntity.badRequest().body(e.getMessage());
+            return ResponseEntity.badRequest().body(Response.error(e.getMessage()));
         }
     }
 
     @PostMapping("/login")
-    public ResponseEntity<String> login(
-            @Valid @RequestBody UserLoginDTO userloginDTO) {
-        String toke = userService.login(userloginDTO.getPhoneNumber(), userloginDTO.getPassword());
-        return ResponseEntity.ok("");
+    public ResponseEntity<?> login(@Valid @RequestBody UserLoginDTO userLoginDTO) {
+        //Kiểm tra thông tin đăng nhập và sinh token
+        //Trả về token trong response
+        try {
+            Object response = userService.login(userLoginDTO.getEmail(), userLoginDTO.getPassword());
+            return ResponseEntity.ok().body(Response.success(response));
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().body(Response.error(e.getMessage()));
+        }
     }
 }

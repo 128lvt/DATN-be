@@ -6,7 +6,7 @@ import com.app.models.User;
 
 
 public interface IUserService {
-    User createUser(UserDTO userDTO) throws DataNotFoundException;
+    User createUser(UserDTO userDTO) throws Exception;
 
-    String login(String phoneNumber, String password);
+    Object login(String phoneNumber, String password) throws DataNotFoundException;
 }

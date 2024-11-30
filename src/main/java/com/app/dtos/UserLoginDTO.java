@@ -7,8 +7,8 @@ import lombok.Data;
 @Data
 public class UserLoginDTO {
     @NotBlank(message = "Phone number is required")
-    @JsonProperty("phone_number")
-    private String phoneNumber;
+    @JsonProperty("email")
+    private String email;
 
     @NotBlank(message = "Password cannot be blank")
     private String password;

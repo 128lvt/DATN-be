@@ -31,12 +31,12 @@ public class JwtTokenUtil {
 
     public String generateToken(User user) {
         Map<String, Object> claims = new HashMap<>();
-        claims.put("phoneNumber", user.getPhoneNumber());
+        claims.put("email", user.getEmail());
         try {
             String token = Jwts
                     .builder()
                     .claims(claims)
-                    .subject(user.getPhoneNumber())
+                    .subject(user.getEmail())
                     .expiration(new Date(System.currentTimeMillis() + expiration * 1000L))
                     .signWith(getSignInKey(), Jwts.SIG.HS256)
                     .compact();
@@ -70,12 +70,12 @@ public class JwtTokenUtil {
         return expirationDate.before(new Date());
     }
 
-    public String extractPhoneNumber(String token) {
+    public String extractEmail(String token) {
         return extractClaim(token, Claims::getSubject);
     }
 
     public boolean validateToken(String token, UserDetails userDetails) {
-        String phoneNumber = this.extractPhoneNumber(token);
+        String phoneNumber = this.extractEmail(token);
         return (phoneNumber.equals(userDetails.getUsername())) && !isTokenExpired(token);
     }
 }

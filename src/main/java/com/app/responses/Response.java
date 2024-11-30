@@ -13,4 +13,7 @@ public class Response {
         return new Response("Success", data);
     }
 
+    public static Response error(String message) {
+        return new Response("Error", message);
+    }
 }
