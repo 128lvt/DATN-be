@@ -8,35 +8,29 @@ import lombok.*;
 import java.util.Date;
 
 @Data
-@Builder
-@AllArgsConstructor // Sửa lỗi tên annotation
-@NoArgsConstructor // Sửa lỗi tên annotation
 public class UserDTO {
-
     @JsonProperty("fullname")
     private String fullName;
 
-    @JsonProperty("phone_number")
-    @NotBlank(message = "Phone number is required")
-    private String phoneNumber;
+    @NotBlank(message = "Email is required")
+    @JsonProperty("email")
+    private String email;
 
     private String address;
 
     @NotBlank(message = "Password cannot be blank")
     private String password;
 
-    @NotBlank(message = "Retype Password cannot be blank")
+    @JsonProperty("retype_password")
     private String retypePassword;
 
-    @JsonProperty("date_of_birth")
-    private Date dateOfBirth;
-
     @JsonProperty("facebook_account_id")
-    private int facebookAccountId;
+    private String facebookAccountId;
 
     @JsonProperty("google_account_id")
-    private int googleAccountId;
+    private String googleAccountId;
 
-    @JsonProperty("role_id")
-    private Long roleId;
+//    @NotNull(message = "Role ID is required")
+//    @JsonProperty("role_id")
+//    private Long roleId;
 }
