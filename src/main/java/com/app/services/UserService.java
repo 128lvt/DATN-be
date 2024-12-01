@@ -75,4 +75,8 @@ public class UserService implements IUserService {
 
         return response;
     }
+
+    public User findByEmail(String email) throws DataNotFoundException {
+        return userRepository.findByEmail(email).orElseThrow(() -> new DataNotFoundException("User not found"));
+    }
 }
