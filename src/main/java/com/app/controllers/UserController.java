@@ -1,8 +1,10 @@
 package com.app.controllers;
 
+import com.app.dtos.ForgotPasswordDTO;
 import com.app.dtos.UserDTO;
 import com.app.dtos.UserLoginDTO;
 import com.app.exceptions.DataNotFoundException;
+import com.app.models.Token;
 import com.app.models.User;
 import com.app.responses.Response;
 import com.app.services.EmailService;
@@ -12,6 +14,8 @@ import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.Objects;
 
 @RestController
 @RequestMapping("${api.prefix}/users")
@@ -58,5 +62,33 @@ public class UserController {
         } catch (DataNotFoundException e) {
             return ResponseEntity.badRequest().body(Response.error("Email không tồn tại. "));
         }
+    }
+
+    @PostMapping("/forgot-password")
+    public ResponseEntity<?> getToken(@Valid @RequestBody ForgotPasswordDTO forgotPasswordDTO) throws DataNotFoundException {
+        if (!Objects.equals(forgotPasswordDTO.getPassword(), forgotPasswordDTO.getRetypePassword())) {
+            return ResponseEntity.badRequest().body("Password does not match");
+        }
+        try {
+            Token existingToken = tokenService.findByToken(forgotPasswordDTO.getToken());
+            boolean isTokenValid = tokenService.isTokenValid(forgotPasswordDTO.getToken());
+            if (existingToken != null && isTokenValid) {
+                User user = existingToken.getUser();
+                if (forgotPasswordDTO.getEmail().equals(user.getEmail())) {
+                    userService.setPassword(forgotPasswordDTO.getEmail(), forgotPasswordDTO.getPassword());
+                    tokenService.delete(existingToken);
+                    return ResponseEntity.ok().body(Response.success("Xác nhận mật khẩu thành công. "));
+                }
+            }
+            return ResponseEntity.ok().body(Response.error("Token không hợp lệ. "));
+        } catch (DataNotFoundException e) {
+            return ResponseEntity.badRequest().body(Response.error(e.getMessage()));
+        }
+    }
+
+    @GetMapping("/test-email")
+    public String testEmail() {
+        emailService.sendTestEmail();
+        return "Test email sent!";
     }
 }

@@ -79,4 +79,10 @@ public class UserService implements IUserService {
     public User findByEmail(String email) throws DataNotFoundException {
         return userRepository.findByEmail(email).orElseThrow(() -> new DataNotFoundException("User not found"));
     }
+
+    public void setPassword(String email, String password) throws DataNotFoundException {
+        User user = userRepository.findByEmail(email).orElseThrow(() -> new DataNotFoundException("User not found"));
+        user.setPassword(passwordEncoder.encode(password));
+        userRepository.save(user);
+    }
 }
