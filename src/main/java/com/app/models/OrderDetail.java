@@ -1,5 +1,7 @@
-package com.app.models;
+package com.project.shopapp.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -20,20 +22,18 @@ public class OrderDetail {
 
     @ManyToOne
     @JoinColumn(name = "order_id")
-    private Order order;
+    @JsonIgnore
+    private com.project.shopapp.model.Order order;
 
     @ManyToOne
     @JoinColumn(name = "product_id")
     private Product product;
 
-    @Column(nullable = false)
-    private Float price;
-
     @Column(name = "number_of_products", nullable = false)
     private Integer numberOfProducts;
 
-    @Column(name = "total_money", nullable = false)
-    private Float totalMoney;
-
-    private String color;
+    @ManyToOne
+    @JoinColumn(name = "variant_id")
+    @JsonManagedReference
+    private ProductVariant productVariant;
 }
