@@ -1,15 +1,16 @@
-package com.project.shopapp.service.product;
+package com.app.services;
 
+import com.app.exceptions.DataNotFoundException;
+import com.app.exceptions.InvalidParamException;
+import com.app.models.Category;
+import com.app.models.Product;
+import com.app.models.ProductImage;
+import com.app.repositories.CategoryRepository;
+import com.app.repositories.ProductImageRepository;
+import com.app.repositories.ProductRepository;
 import com.project.shopapp.dto.ProductDTO;
 import com.project.shopapp.dto.ProductImageDTO;
-import com.project.shopapp.exception.DataNotFoundException;
-import com.project.shopapp.exception.InvalidParamException;
-import com.project.shopapp.model.Category;
-import com.project.shopapp.model.Product;
-import com.project.shopapp.model.ProductImage;
-import com.project.shopapp.repository.CategoryRepository;
-import com.project.shopapp.repository.ProductImageRepository;
-import com.project.shopapp.repository.ProductRepository;
+
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
