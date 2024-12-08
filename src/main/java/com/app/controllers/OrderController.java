@@ -1,9 +1,10 @@
-package com.app.controllers;
+package com.project.shopapp.controller;
 
-import com.app.dtos.OrderDTO;
-import com.app.models.Order;
-import com.app.responses.Response;
-import com.app.services.OrderService;
+import com.project.shopapp.dto.OrderDTO;
+import com.project.shopapp.model.Order;
+import com.project.shopapp.response.Response;
+import com.project.shopapp.service.order.OrderService;
+import com.project.shopapp.service.variant.VariantService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -16,6 +17,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class OrderController {
     private final OrderService orderService;
+    private final VariantService variantService;
 
     @PostMapping
     public ResponseEntity<?> createOrder(@RequestBody @Valid OrderDTO orderDTO) {
@@ -67,6 +69,16 @@ public class OrderController {
                     .build());
         } catch (Exception e) {
             return ResponseEntity.badRequest().body(e.getMessage());
+        }
+    }
+
+    @PutMapping("/status/{id}")
+    public ResponseEntity<?> updateOrderStatus(@Valid @PathVariable("id") Long id, @RequestParam(value = "status") String status) {
+        try {
+            orderService.updateStatus(id, status);
+            return ResponseEntity.ok().body(Response.success("Chỉnh sửa trạng thái thành công"));
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().body(Response.error(e.getMessage()));
         }
     }
 

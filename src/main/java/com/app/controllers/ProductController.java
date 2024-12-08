@@ -1,15 +1,17 @@
-package com.app.controllers;
+package com.project.shopapp.controller;
 
-import ch.qos.logback.core.util.StringUtil;
-import com.app.dtos.ProductDTO;
-import com.app.dtos.ProductImageDTO;
-import com.app.dtos.ProductVariantDTO;
-import com.app.exceptions.DataNotFoundException;
-import com.app.models.Product;
-import com.app.models.ProductImage;
-import com.app.models.ProductVariant;
-import com.app.services.ProductService;
-import com.app.services.VariantService;
+import com.github.javafaker.Faker;
+import com.project.shopapp.dto.ProductDTO;
+import com.project.shopapp.dto.ProductImageDTO;
+import com.project.shopapp.dto.ProductVariantDTO;
+import com.project.shopapp.exception.DataNotFoundException;
+import com.project.shopapp.model.Product;
+import com.project.shopapp.model.ProductImage;
+import com.project.shopapp.model.ProductVariant;
+import com.project.shopapp.response.ProductResponse;
+import com.project.shopapp.response.Response;
+import com.project.shopapp.service.product.ProductService;
+import com.project.shopapp.service.variant.VariantService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.core.io.UrlResource;
@@ -19,11 +21,8 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
-
-import com.app.responses.Response;
 import org.springframework.web.multipart.MultipartFile;
 
-import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -31,8 +30,8 @@ import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.UUID;
-
 
 @RestController
 @RequestMapping("${api.prefix}/products")
@@ -44,15 +43,6 @@ public class ProductController {
     private final VariantService variantService;
 
     @PostMapping
-    //@Valid để validate dữ liệu
-    //<?> Có thể vừa nhận String và List<String>
-    /*{
-        "name": "IPad Pro 2023",
-            "price": 812.34,
-            "thumbnail": "",
-            "description": "This is a test",
-            "category_id": 1
-    }*/
     public ResponseEntity<?> createProduct(@Valid @RequestBody ProductDTO productDTO) throws DataNotFoundException {
         try {
             return ResponseEntity.ok().body(Response
@@ -74,6 +64,7 @@ public class ProductController {
     @PostMapping("/variant")
     public ResponseEntity<?> createProductVariant(@Valid @RequestBody ProductVariantDTO productVariantDTO) throws Exception {
         try {
+            //Kiem tra size, color da ton tai chua
             if (variantService.existsVariant(productVariantDTO.getProductId(), productVariantDTO.getColor(), productVariantDTO.getSize())) {
                 return ResponseEntity.badRequest().body(Response.error("Color, size đã tồn tại"));
             } else {
@@ -221,11 +212,6 @@ public class ProductController {
 
     @GetMapping
     public ResponseEntity<?> getProducts() {
-//        PageRequest pageRequest = PageRequest.of(page, limit, Sort.by("createdAt").ascending());
-//        Page<Product> productPage = productService.getAllProducts(pageRequest);
-//        int totalPages = productPage.getTotalPages();
-//        List<Product> products = productPage.getContent();
-//        return ResponseEntity.ok().body(Response.success(ProductResponse.builder().products(products).totalPages(totalPages).build()));
         return ResponseEntity.ok().body(Response.success(productService.getAllProducts()));
 
     }
@@ -249,9 +235,11 @@ public class ProductController {
             categoryIds = null;
         }
 
+        //Phan trang
         Page<Product> productPage = productService.searchProducts(name, minPrice, maxPrice, description, categoryIds, sortOrder, page, limit);
         int totalPages = productPage.getTotalPages();
         List<Product> products = productPage.getContent();
+        
         return ResponseEntity.ok().body(Response.success(ProductResponse.builder().products(products).totalPages(totalPages).build()));
     }
 
@@ -270,6 +258,7 @@ public class ProductController {
 
     @PutMapping("/{id}")
     public ResponseEntity<?> updateProduct(@PathVariable("id") Long productId, @RequestBody ProductDTO productDTO) throws DataNotFoundException {
+        //Goi function updateProduct ben ProductService
         Product product = productService.updateProduct(productId, productDTO);
         return ResponseEntity.ok().body(Response.success(product));
     }
