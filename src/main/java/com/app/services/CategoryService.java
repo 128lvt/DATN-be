@@ -1,8 +1,8 @@
-package com.app.services;
+package com.project.shopapp.service.category;
 
-import com.app.dtos.CategoryDTO;
-import com.app.models.Category;
-import com.app.repositories.CategoryRepository;
+import com.project.shopapp.dto.CategoryDTO;
+import com.project.shopapp.model.Category;
+import com.project.shopapp.repository.CategoryRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -10,45 +10,38 @@ import java.util.List;
 
 @Service
 @RequiredArgsConstructor
-public class CategoryService implements ICategoryService {
+public class CategoryService {
     private final CategoryRepository categoryRepository;
 
-    @Override
     public Category createCategory(CategoryDTO categoryDTO) {
-        Category newCategory = Category
-                .builder()
+        Category category = Category.builder()
                 .name(categoryDTO.getName())
                 .build();
-        return categoryRepository.save(newCategory);
+        //Luu vao database
+        return categoryRepository.save(category);
     }
 
-    @Override
-    public Category getCategory(long id) {
-        return null;
-    }
 
-    @Override
-    public Category getCategoryById(long id) {
+    public Category getCategoryById(Long id) {
         return categoryRepository.findById(id).orElseThrow(() -> new RuntimeException("Category not found"));
     }
 
-    @Override
+
     public List<Category> getAllCategories() {
         return categoryRepository.findAll();
     }
 
-    @Override
-    public Category updateCategory(long categoryId,
-                                   CategoryDTO categoryDTO) {
-        Category existingCategory = getCategoryById(categoryId);
+
+    public void updateCategory(Long id, CategoryDTO categoryDTO) {
+        //Tim category
+        Category existingCategory = getCategoryById(id);
         existingCategory.setName(categoryDTO.getName());
+        //Luu vao database
         categoryRepository.save(existingCategory);
-        return existingCategory;
     }
 
-    @Override
-    public void deleteCategory(long id) {
-        // xoa xong
+
+    public void deleteCategory(Long id) {
         categoryRepository.deleteById(id);
     }
 }
