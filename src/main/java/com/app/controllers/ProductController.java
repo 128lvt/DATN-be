@@ -1,17 +1,10 @@
-package com.project.shopapp.controller;
+package com.app.controllers;
 
+import com.app.exceptions.DataNotFoundException;
+import com.app.models.Product;
+import com.app.models.ProductImage;
+import com.app.services.ProductService;
 import com.github.javafaker.Faker;
-import com.project.shopapp.dto.ProductDTO;
-import com.project.shopapp.dto.ProductImageDTO;
-import com.project.shopapp.dto.ProductVariantDTO;
-import com.project.shopapp.exception.DataNotFoundException;
-import com.project.shopapp.model.Product;
-import com.project.shopapp.model.ProductImage;
-import com.project.shopapp.model.ProductVariant;
-import com.project.shopapp.response.ProductResponse;
-import com.project.shopapp.response.Response;
-import com.project.shopapp.service.product.ProductService;
-import com.project.shopapp.service.variant.VariantService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.core.io.UrlResource;
@@ -40,12 +33,12 @@ import java.util.UUID;
 public class ProductController {
     private final ProductService productService;
 
-    private final VariantService variantService;
+    private final com.project.shopapp.service.variant.variantService variantService;
 
     @PostMapping
-    public ResponseEntity<?> createProduct(@Valid @RequestBody ProductDTO productDTO) throws DataNotFoundException {
+    public ResponseEntity<?> createProduct(@Valid @RequestBody com.project.shopapp.dto.ProductDTO productDTO) throws DataNotFoundException {
         try {
-            return ResponseEntity.ok().body(Response
+            return ResponseEntity.ok().body(com.project.shopapp.response.Response
                     .builder()
                     .message("create product successfully")
                     .data(productService.createProduct(productDTO))
@@ -58,17 +51,17 @@ public class ProductController {
     @GetMapping("/variant/{id}")
     public ResponseEntity<?> getVariant(@PathVariable Long id) {
         List<ProductVariant> productVariants = variantService.getVariantByProductId(id);
-        return ResponseEntity.ok().body(Response.success(productVariants));
+        return ResponseEntity.ok().body(com.project.shopapp.response.Response.success(productVariants));
     }
 
     @PostMapping("/variant")
-    public ResponseEntity<?> createProductVariant(@Valid @RequestBody ProductVariantDTO productVariantDTO) throws Exception {
+    public ResponseEntity<?> createProductVariant(@Valid @RequestBody com.project.shopapp.dto.ProductVariantDTO productVariantDTO) throws Exception {
         try {
             //Kiem tra size, color da ton tai chua
             if (variantService.existsVariant(productVariantDTO.getProductId(), productVariantDTO.getColor(), productVariantDTO.getSize())) {
-                return ResponseEntity.badRequest().body(Response.error("Color, size đã tồn tại"));
+                return ResponseEntity.badRequest().body(com.project.shopapp.response.Response.error("Color, size đã tồn tại"));
             } else {
-                return ResponseEntity.ok().body(Response
+                return ResponseEntity.ok().body(com.project.shopapp.response.Response
                         .builder()
                         .message("Create product variant successfully")
                         .data(variantService.create(productVariantDTO))
@@ -84,14 +77,14 @@ public class ProductController {
 
 
     @PutMapping("/variant/{id}")
-    public ResponseEntity<?> updateProductVariant(@PathVariable Long id, @Valid @RequestBody ProductVariantDTO productVariantDTO) throws DataNotFoundException {
-        return ResponseEntity.ok().body(Response.success(variantService.update(id, productVariantDTO)));
+    public ResponseEntity<?> updateProductVariant(@PathVariable Long id, @Valid @RequestBody com.project.shopapp.dto.ProductVariantDTO productVariantDTO) throws DataNotFoundException {
+        return ResponseEntity.ok().body(com.project.shopapp.response.Response.success(variantService.update(id, productVariantDTO)));
     }
 
     @DeleteMapping("/variant/{id}")
     public ResponseEntity<?> deleteVariant(@PathVariable Long id) throws DataNotFoundException {
         variantService.delete(id);
-        return ResponseEntity.ok().body(Response.success(null));
+        return ResponseEntity.ok().body(com.project.shopapp.response.Response.success(null));
     }
 
     @GetMapping("images/{imageName}")
@@ -137,7 +130,7 @@ public class ProductController {
             productImage.setImageUrl(fileName);
             productService.updateProductImage(productImageId, productImage);
 
-            return ResponseEntity.ok().body(Response.success(null));
+            return ResponseEntity.ok().body(com.project.shopapp.response.Response.success(null));
         } catch (Exception e) {
             return ResponseEntity.badRequest().body(e.getMessage());
         }
@@ -170,7 +163,7 @@ public class ProductController {
                     String fileName = storeFile(file);
                     ProductImage productImage = productService.createProductImage(
                             product.getId(),
-                            ProductImageDTO.builder()
+                            com.project.shopapp.dto.ProductImageDTO.builder()
                                     .imageUrl(fileName)
                                     .build()
                     );
@@ -212,7 +205,7 @@ public class ProductController {
 
     @GetMapping
     public ResponseEntity<?> getProducts() {
-        return ResponseEntity.ok().body(Response.success(productService.getAllProducts()));
+        return ResponseEntity.ok().body(com.project.shopapp.response.Response.success(productService.getAllProducts()));
 
     }
 
@@ -239,8 +232,8 @@ public class ProductController {
         Page<Product> productPage = productService.searchProducts(name, minPrice, maxPrice, description, categoryIds, sortOrder, page, limit);
         int totalPages = productPage.getTotalPages();
         List<Product> products = productPage.getContent();
-        
-        return ResponseEntity.ok().body(Response.success(ProductResponse.builder().products(products).totalPages(totalPages).build()));
+
+        return ResponseEntity.ok().body(com.project.shopapp.response.Response.success(ProductResponse.builder().products(products).totalPages(totalPages).build()));
     }
 
 
@@ -249,7 +242,7 @@ public class ProductController {
         try {
             return ResponseEntity.ok(productService.getProduct(productId));
         } catch (DataNotFoundException e) {
-            return ResponseEntity.badRequest().body(Response.builder()
+            return ResponseEntity.badRequest().body(com.project.shopapp.response.Response.builder()
                     .message("Product not found")
                     .data(e.getMessage())
                     .build());
@@ -257,10 +250,10 @@ public class ProductController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<?> updateProduct(@PathVariable("id") Long productId, @RequestBody ProductDTO productDTO) throws DataNotFoundException {
+    public ResponseEntity<?> updateProduct(@PathVariable("id") Long productId, @RequestBody com.project.shopapp.dto.ProductDTO productDTO) throws DataNotFoundException {
         //Goi function updateProduct ben ProductService
         Product product = productService.updateProduct(productId, productDTO);
-        return ResponseEntity.ok().body(Response.success(product));
+        return ResponseEntity.ok().body(com.project.shopapp.response.Response.success(product));
     }
 
     @DeleteMapping("/{id}")
@@ -277,7 +270,7 @@ public class ProductController {
             if (productService.existsByName(productName)) {
                 continue;
             }
-            ProductDTO productDTO = ProductDTO
+            com.project.shopapp.dto.ProductDTO productDTO = com.project.shopapp.dto.ProductDTO
                     .builder()
                     .name(productName)
                     .price((double) faker.number().numberBetween(100000, 9000000))
