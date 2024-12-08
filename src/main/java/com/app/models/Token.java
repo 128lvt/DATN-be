@@ -22,14 +22,8 @@ public class Token {
     @Column(name = "token")
     private String token;
 
-    @Column(name = "token_type", length = 50)
-    private String tokenType;
-
     @Column(name = "expiration_date")
     private LocalDateTime expirationDate;
-
-    private boolean revoked;
-    private boolean expired;
 
     @ManyToOne
     @JoinColumn(name = "user_id")

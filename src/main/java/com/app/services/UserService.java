@@ -1,5 +1,6 @@
 package com.app.services;
 
+import com.app.component.JwtTokenUtil;
 import com.app.dtos.UserDTO;
 import com.app.exceptions.DataNotFoundException;
 import com.app.models.Role;
@@ -8,46 +9,78 @@ import com.app.repositories.RoleRepository;
 import com.app.repositories.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.dao.DataIntegrityViolationException;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.BadCredentialsException;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+
+import java.util.HashMap;
+import java.util.Map;
 
 @Service
 @RequiredArgsConstructor
-public class UserService implements IUserService {
-    private UserRepository userRepository;
-    private RoleRepository roleRepository;
+public class UserService {
+    private final UserRepository userRepository;
+    private final RoleRepository roleRepository;
+    private final PasswordEncoder passwordEncoder;
+    private final JwtTokenUtil jwtTokenUtil;
+    private final AuthenticationManager authenticationManager;
 
-    @Override
-    public User createUser(UserDTO userDTO) throws DataNotFoundException {
-        String phoneNumber = userDTO.getPhoneNumber();
-        //KTra sdt đã tồn tại hay chưa
-        if (userRepository.existsByPhoneNumber(phoneNumber)) {
-            throw new DataIntegrityViolationException("Phone number already exists");
+    public User createUser(UserDTO userDTO) throws Exception {
+        String phoneNUmber = userDTO.getEmail();
+        //Kiểm tra số điện thoại đ ồn tại hay chưa
+        if (userRepository.findByEmail(phoneNUmber).isPresent()) {
+            throw new DataIntegrityViolationException("Email already exists");
         }
-        //convert userDTO => user
-        User newUser = User.builder()
+
+        Role role = roleRepository.findByName("user");
+
+        User user = User.builder()
                 .fullName(userDTO.getFullName())
-                .phoneNumber(userDTO.getPhoneNumber())
+                .email(userDTO.getEmail())
+                .password(userDTO.getPassword())
                 .address(userDTO.getAddress())
-                .dateOfBirth(userDTO.getDateOfBirth())
                 .facebookAccountId(userDTO.getFacebookAccountId())
                 .googleAccountId(userDTO.getGoogleAccountId())
                 .build();
-        Role role = roleRepository.findById(userDTO.getRoleId())
-                .orElseThrow(() -> new DataNotFoundException("Role not found"));
-        newUser.setRole(role);
-        //Ktra nếu có AccountId, ko yêu cầu mk
-//        if (userDTO.getFacebookAccountId() = 0 && userDTO.getFacebookAccountId() = 0) {
-//            String password = userDTO.getPassword();
-//            //String encodedPassword = passwordEncoder.encode(password);
-//            //sẽ nói trong phần spring security
-//            //newUser.setPassword(encodedPassword);
-//        }
-        return userRepository.save(newUser);
+
+        user.setRole(role);
+        //Kiểm tra đăng nhập bằng facebook và google
+        if (userDTO.getFacebookAccountId() == null && userDTO.getGoogleAccountId() == null) {
+            String password = userDTO.getPassword();
+            String encodePassword = passwordEncoder.encode(password);
+            user.setPassword(encodePassword);
+        }
+        user.setActive(true);
+        return userRepository.save(user);
     }
 
-    @Override
-    public String login(String phoneNumber, String password) {
-        //lquan nhiều đến security
-        return null;
+    public Object login(String email, String password) throws DataNotFoundException {
+        User user = userRepository.findByEmail(email).orElseThrow(() -> new DataNotFoundException("User not found"));
+
+        if (user.getFacebookAccountId() == null && user.getGoogleAccountId() == null) {
+            if (!passwordEncoder.matches(password, user.getPassword())) {
+                throw new BadCredentialsException("Incorrect password");
+            }
+        }
+
+        authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(email, password, user.getAuthorities()));
+
+        Map<String, Object> response = new HashMap<>();
+        response.put("token", jwtTokenUtil.generateToken(user));
+        response.put("user", user);
+
+        return response;
+    }
+
+    public User findByEmail(String email) throws DataNotFoundException {
+        return userRepository.findByEmail(email).orElseThrow(() -> new DataNotFoundException("User not found"));
+    }
+
+    public void setPassword(String email, String password) throws DataNotFoundException {
+        User user = userRepository.findByEmail(email).orElseThrow(() -> new DataNotFoundException("User not found"));
+        user.setPassword(passwordEncoder.encode(password));
+        userRepository.save(user);
     }
 }

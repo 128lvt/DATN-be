@@ -39,6 +39,7 @@ public class Product extends BaseEntity {
 
     private String description;
 
+
     @ManyToOne
     @JoinColumn(name = "category_id")
     private Category category;
@@ -47,5 +48,9 @@ public class Product extends BaseEntity {
     @OneToMany(mappedBy = "product", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonManagedReference
     private List<ProductVariant> variants = new ArrayList<>();
+
+    @OneToMany(mappedBy = "product", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonManagedReference
+    private List<ProductImage> images = new ArrayList<>();
 
 }

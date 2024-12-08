@@ -1,63 +1,51 @@
-package com.app.controllers;
+package com.project.shopapp.controller;
 
-import com.app.dtos.CategoryDTO;
-import com.app.models.Category;
-import com.app.services.CategoryService;
+import com.project.shopapp.dto.CategoryDTO;
+import com.project.shopapp.model.Category;
+import com.project.shopapp.response.Response;
+import com.project.shopapp.service.category.CategoryService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.validation.BindingResult;
-import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-@RequestMapping
-//@Validated
-//Dependency Injection
+@RequestMapping("${api.prefix}/categories")
+/*@Validated*/
 @RequiredArgsConstructor
 public class CategoryController {
     private final CategoryService categoryService;
 
-    // hien tat ca cac categories
-    @GetMapping("")
-    public ResponseEntity<List<Category>> getAllCategories(
-            @RequestParam("page") int page,
-            @RequestParam("limit") int limit
-    ) {
-        List<Category> categories = categoryService.getAllCategories();
-        return ResponseEntity.ok(categories);
+    @PostMapping
+    public ResponseEntity<?> createCategory(@Valid @RequestBody CategoryDTO categoryDTO) {
+        try {
+            Category category = categoryService.createCategory(categoryDTO);
+            return ResponseEntity.ok().body(Response.builder()
+                    .message("Create category successfully")
+                    .data(category)
+                    .build());
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().body(e.getMessage());
+        }
     }
 
-    @PostMapping("")
-    //neu tham so truyen vao 1 object thi sao ?=> data transfer object = request object
-    public ResponseEntity<?> insertCategory(
-            @Valid @RequestBody CategoryDTO categoryDTO,
-            BindingResult bindingResult) {
-        if (bindingResult.hasErrors()) {
-            List<String> errorMessage = bindingResult.getFieldErrors()
-                    .stream()
-                    .map(FieldError::getDefaultMessage)
-                    .toList();
-            return ResponseEntity.badRequest().body(errorMessage);
-        }
-        categoryService.createCategory(categoryDTO);
-        return ResponseEntity.ok("Insert category successfully");
+    @GetMapping
+    public ResponseEntity<?> getAllCategories() {
+        List<Category> categories = categoryService.getAllCategories();
+        return ResponseEntity.ok().body(Response.success(categories));
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<String> updateCategory(
-            @PathVariable Long id,
-            @Valid @RequestBody CategoryDTO categoryDTO
-    ) {
+    public ResponseEntity<?> updateCategory(@PathVariable Long id, @Valid @RequestBody CategoryDTO categoryDTO) {
         categoryService.updateCategory(id, categoryDTO);
-        return ResponseEntity.ok("Update category successfully ");
+        return ResponseEntity.ok("Update category successfully " + categoryDTO);
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<String> deleteCategory(@PathVariable Long id) {
+    public ResponseEntity<?> deleteCategory(@PathVariable Long id) {
         categoryService.deleteCategory(id);
-        return ResponseEntity.ok("Delete category with id" + id + " successfully");
+        return ResponseEntity.ok("Delete category successfully " + id);
     }
 }
