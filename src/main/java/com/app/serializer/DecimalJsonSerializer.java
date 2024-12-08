@@ -1,4 +1,4 @@
-package com.app.serializer;
+package com.project.shopapp.serializer;
 
 import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.databind.JsonSerializer;
