@@ -1,4 +1,4 @@
-package com.app.responses;
+package com.project.shopapp.response;
 
 import lombok.Builder;
 import lombok.Data;
