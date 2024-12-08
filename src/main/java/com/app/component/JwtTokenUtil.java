@@ -1,7 +1,6 @@
-package com.app.component;
+package com.project.shopapp.component;
 
-
-import com.app.models.User;
+import com.project.shopapp.model.User;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.io.Decoders;
