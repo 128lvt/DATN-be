@@ -15,7 +15,7 @@ import java.util.List;
 
 @Service
 @RequiredArgsConstructor
-public class VariantService {
+public class variantService {
     private final ProductVariantRepository productVariantRepository;
     private final ProductService productService;
 
