@@ -1,7 +1,7 @@
-package com.app.filter;
+package com.project.shopapp.filter;
 
-import com.app.component.JwtTokenUtil;
-import com.app.models.User;
+import com.project.shopapp.component.JwtTokenUtil;
+import com.project.shopapp.model.User;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -35,7 +35,7 @@ public class JwtTokenFilter extends OncePerRequestFilter {
                                     @NonNull FilterChain filterChain) throws ServletException, IOException {
         try {
             if (isBypassToken(request)) {
-                filterChain.doFilter(request, response);//enable bypass
+                filterChain.doFilter(request, response);
                 return;
             }
             final String authHeader = request.getHeader("Authorization");
@@ -68,7 +68,11 @@ public class JwtTokenFilter extends OncePerRequestFilter {
                 Pair.of(String.format("%s/products", apiPrefix), "GET"),
                 Pair.of(String.format("%s/categories", apiPrefix), "GET"),
                 Pair.of(String.format("%s/users/register", apiPrefix), "POST"),
-                Pair.of(String.format("%s/users/login", apiPrefix), "POST")
+                Pair.of(String.format("%s/users/login", apiPrefix), "POST"),
+                Pair.of(String.format("%s/users/token", apiPrefix), "GET"),
+                Pair.of(String.format("%s/users/test-email", apiPrefix), "GET"),
+                Pair.of(String.format("%s/users/forgot-password", apiPrefix), "POST"),
+                Pair.of(String.format("%s/payments/momo/callback", apiPrefix), "GET")
         );
         for (Pair<String, String> token : bypassTokens) {
             if (request.getRequestURI().contains(token.getFirst()) && request.getMethod().equals(token.getSecond())) {
