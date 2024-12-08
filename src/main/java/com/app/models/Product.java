@@ -37,7 +37,6 @@ public class Product extends BaseEntity {
     @Column(length = 300)
     private String thumbnail;
 
-    private String description;
 
     @ManyToOne
     @JoinColumn(name = "category_id")
