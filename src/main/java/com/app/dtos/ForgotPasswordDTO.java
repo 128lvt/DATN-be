@@ -1,4 +1,4 @@
-package com.app.dtos;
+package com.project.shopapp.dto;
 
 import lombok.Data;
 

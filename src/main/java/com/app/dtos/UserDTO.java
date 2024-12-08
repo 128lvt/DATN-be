@@ -1,11 +1,8 @@
-package com.app.dtos;
+package com.project.shopapp.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-
 import jakarta.validation.constraints.NotBlank;
-import lombok.*;
-
-import java.util.Date;
+import lombok.Data;
 
 @Data
 public class UserDTO {
