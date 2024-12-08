@@ -1,14 +1,9 @@
-package com.app.models;
+package com.project.shopapp.model;
 
-import lombok.Builder;
-import lombok.Data;
-
-@Data
-@Builder
 public class OrderStatus {
-    public static final String PENDING = "pending";
-    public static final String PROCESSING = "processing";
-    public static final String SHIPPED = "shipped";
-    public static final String DELIVERED = "delivered";
-    public static final String CANCELLED = "cancelled";
+    public static final String PENDING = "Chờ xác nhận";
+    public static final String PROCESSING = "Đang xử lý";
+    public static final String SHIPPED = "Đã gửi hàng";
+    public static final String DELIVERED = "Đã giao hàng";
+    public static final String CANCELLED = "Đã hủy";
 }
