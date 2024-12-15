@@ -1,21 +1,21 @@
-package com.app.configuration;
+package com.project.shopapp.configuration;
 
-
-import com.app.filter.JwtTokenFilter;
-import com.app.models.Role;
+import com.project.shopapp.filter.JwtTokenFilter;
+import com.project.shopapp.model.Role;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 @Configuration
 @RequiredArgsConstructor
-//@EnableWebSecurity
+@EnableWebSecurity
 public class WebSecurityConfig {
     private final JwtTokenFilter jwtTokenFilter;
 
@@ -32,8 +32,8 @@ public class WebSecurityConfig {
                                 String.format("%s/users/register", apiPrefix),
                                 String.format("%s/users/login", apiPrefix),
                                 String.format("%s/users/token", apiPrefix),
-                                String.format("%s/users/test-email", apiPrefix),
-                                String.format("%s/users/forgot-password", apiPrefix)
+                                String.format("%s/users/forgot-password", apiPrefix),
+                                String.format("%s/payments/momo/callback", apiPrefix)
                         )
                         .permitAll()
                         .requestMatchers(HttpMethod.GET,
@@ -69,11 +69,17 @@ public class WebSecurityConfig {
                         .requestMatchers(HttpMethod.GET,
                                 String.format("%s/orders/**", apiPrefix)).hasAnyRole(Role.ADMIN, Role.USER, Role.DEV)
 
+                        .requestMatchers(HttpMethod.GET,
+                                String.format("%s/orders", apiPrefix)).hasAnyRole(Role.ADMIN, Role.USER, Role.DEV)
+
                         .requestMatchers(HttpMethod.PUT,
                                 String.format("%s/orders/**", apiPrefix)).hasAnyRole(Role.ADMIN, Role.DEV)
 
                         .requestMatchers(HttpMethod.DELETE,
                                 String.format("%s/orders/**", apiPrefix)).hasAnyRole(Role.ADMIN, Role.DEV)
+
+                        .requestMatchers(HttpMethod.PUT,
+                                String.format("%s/orders/status/**", apiPrefix)).hasAnyRole(Role.ADMIN, Role.DEV)
 
                         .requestMatchers(HttpMethod.POST,
                                 String.format("%s/order_details/**", apiPrefix)).hasAnyRole(Role.USER, Role.DEV)
@@ -92,32 +98,4 @@ public class WebSecurityConfig {
 
         return http.build();
     }
-
-//    @Bean
-//    public CorsFilter corsFilter() {
-//        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-//        CorsConfiguration config = new CorsConfiguration();
-//        config.setAllowCredentials(true);
-////        config.addAllowedOrigin("https://e-commerce-navy-eta.vercel.app/");
-//        config.addAllowedOrigin("http://localhost:3000");
-//        config.addAllowedOrigin("http://localhost:3001");
-//        config.addAllowedHeader("*"); // Cho phép tất cả các header
-//        config.addAllowedMethod("*"); // Cho phép tất cả các phương thức (GET, POST, PUT, DELETE, ...)
-//        source.registerCorsConfiguration("/**", config); // Áp dụng cho tất cả các endpoint
-//        return new CorsFilter(source);
-//    }
-
-//    @Bean
-//    public UrlBasedCorsConfigurationSource corsConfigurationSource() {
-//        CorsConfiguration configuration = new CorsConfiguration();
-//        configuration.setAllowCredentials(true);
-////        configuration.addAllowedOrigin("https://e-commerce-navy-eta.vercel.app");
-//        configuration.addAllowedOrigin("http://localhost:3000");
-//        configuration.addAllowedOrigin("http://localhost:3001");
-//        configuration.addAllowedHeader("*"); // Cho phép tất cả các header
-//        configuration.addAllowedMethod("*"); // Cho phép tất cả các phương thức
-//        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-//        source.registerCorsConfiguration("/**", configuration); // Áp dụng cho tất cả các endpoint
-//        return source;
-//    }
 }

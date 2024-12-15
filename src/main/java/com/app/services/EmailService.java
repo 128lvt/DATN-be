@@ -1,4 +1,4 @@
-package com.app.services;
+package com.project.shopapp.service.user;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.mail.SimpleMailMessage;

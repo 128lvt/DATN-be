@@ -1,4 +1,4 @@
-package com.app.component;
+package com.project.shopapp.component;
 
 import com.project.shopapp.model.User;
 import io.jsonwebtoken.Claims;

@@ -1,4 +1,4 @@
-package com.app.filter;
+package com.project.shopapp.filter;
 
 import com.project.shopapp.component.JwtTokenUtil;
 import com.project.shopapp.model.User;

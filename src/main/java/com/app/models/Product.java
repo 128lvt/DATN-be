@@ -1,8 +1,8 @@
 package com.app.models;
 
-import com.app.serializer.DecimalJsonSerializer;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.project.shopapp.serializer.DecimalJsonSerializer;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -34,19 +34,17 @@ public class Product extends BaseEntity {
         return variants.stream().mapToLong(ProductVariant::getStock).sum();
     }
 
-    @Column(length = 300)
-    private String thumbnail;
-
     private String description;
-
 
     @ManyToOne
     @JoinColumn(name = "category_id")
     private Category category;
 
-
-    @OneToMany(mappedBy = "product", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "product")
     @JsonManagedReference
-    private List<ProductVariant> variants = new ArrayList<>();
+    private final List<ProductVariant> variants = new ArrayList<>();
 
+    @OneToMany(mappedBy = "product")
+    @JsonManagedReference
+    private final List<ProductImage> images = new ArrayList<>();
 }
