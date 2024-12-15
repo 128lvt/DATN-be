@@ -1,4 +1,4 @@
-package com.project.shopapp.model;
+package com.app.models;
 
 public class OrderStatus {
     public static final String PENDING = "Chờ xác nhận";

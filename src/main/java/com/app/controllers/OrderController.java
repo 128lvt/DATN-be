@@ -4,7 +4,6 @@ import com.project.shopapp.dto.OrderDTO;
 import com.project.shopapp.model.Order;
 import com.project.shopapp.response.Response;
 import com.project.shopapp.service.order.OrderService;
-import com.project.shopapp.service.variant.VariantService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -17,7 +16,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class OrderController {
     private final OrderService orderService;
-    private final VariantService variantService;
+    private final com.project.shopapp.service.variant.variantService variantService;
 
     @PostMapping
     public ResponseEntity<?> createOrder(@RequestBody @Valid OrderDTO orderDTO) {

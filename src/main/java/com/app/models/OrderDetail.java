@@ -1,4 +1,4 @@
-package com.project.shopapp.model;
+package com.app.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
@@ -23,7 +23,7 @@ public class OrderDetail {
     @ManyToOne
     @JoinColumn(name = "order_id")
     @JsonIgnore
-    private com.project.shopapp.model.Order order;
+    private Order order;
 
     @ManyToOne
     @JoinColumn(name = "product_id")

@@ -7,7 +7,6 @@ import com.project.shopapp.model.ProductVariant;
 import com.project.shopapp.response.Response;
 import com.project.shopapp.service.order.OrderDetailService;
 import com.project.shopapp.service.order.OrderService;
-import com.project.shopapp.service.variant.VariantService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -20,7 +19,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class OrderDetailController {
     private final OrderDetailService orderDetailService;
-    private final VariantService variantService;
+    private final com.project.shopapp.service.variant.variantService variantService;
     private final OrderService orderService;
 
     @PostMapping
