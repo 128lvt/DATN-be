@@ -1693,3 +1693,256 @@ Một ví dụ điển hình là việc áp dụng AI trong lĩnh vực chăm s�
 Bên cạnh đó, AI cũng đang làm thay đổi cách chúng ta học tập và làm việc. Các ứng dụng học tập thông minh có khả năng cá nhân hóa nội dung giảng dạy, giúp học sinh và sinh viên dễ dàng tiếp cận kiến thức theo cách phù hợp với bản thân.
 
 Trong tương lai, với sự phát triển không ngừng của công nghệ, AI hứa hẹn sẽ tiếp tục mở ra nhiều cơ hội mới, đồng thời mang đến thách thức mà chúng ta cần đối mặt một cách thận trọng và sáng tạo.
+
+Cha Thiết Trụ cầm lấy tẩu hút thuốc, hút một ngụm thật sâu, trên mặt nếp nhăn, lập tức lại nhiều lên không ít.
+
+- Thiết Trụ, phải tranh phần hơn cho cha mẹ ngươi, nhất định phải được tuyển chọn. Nhị ca, nhị tẩu, gia tộc vài ngày sau sẽ có bữa tiệc lớn chúc mừng, hôm nay vội quá, ta sáng mai tới đón các ngươi cùng nhau đi qua, gia tộc ba cái oa nhi bị đề cử đi lên, khi đó sẽ kết quả rồi.
+
+Nói xong, hắn vội vàng lôi kéo Thiết Trụ lên xe ngựa, đánh lên ngựa một roi, nghênh ngang mà đi.
+
+Cha mẹ Thiết Trụ, vẫn nhìn xe ngựa nhanh chóng biến mất, rơi lệ không ngừng.
+
+- Cha nó, Thiết Trụ cho tới bây giờ chưa từng rời đi bên cạnh chúng ta, lần này hắn đi ra ngoài có thể hay không chịu khi dễ.
+
+Mẹ Thiết Trụ cắn môi dưới, ánh mắt lộ ra không muốn.
+
+- Oa nhi trưởng thành rồi, tự có phúc khí của nó.
+
+Cha Thiết Trụ cầm lấy tẩu hút thuốc, hút một ngụm thật sâu, trên mặt nếp nhăn, lập tức lại nhiều lên không ít.
+
+- Thiết Trụ, phải tranh phần hơn cho cha mẹ ngươi, nhất định phải được tuyển chọn. Nhị ca, nhị tẩu, gia tộc vài ngày sau sẽ có bữa tiệc lớn chúc mừng, hôm nay vội quá, ta sáng mai tới đón các ngươi cùng nhau đi qua, gia tộc ba cái oa nhi bị đề cử đi lên, khi đó sẽ kết quả rồi.
+
+Nói xong, hắn vội vàng lôi kéo Thiết Trụ lên xe ngựa, đánh lên ngựa một roi, nghênh ngang mà đi.
+
+Cha mẹ Thiết Trụ, vẫn nhìn xe ngựa nhanh chóng biến mất, rơi lệ không ngừng.
+
+- Cha nó, Thiết Trụ cho tới bây giờ chưa từng rời đi bên cạnh chúng ta, lần này hắn đi ra ngoài có thể hay không chịu khi dễ.
+
+Mẹ Thiết Trụ cắn môi dưới, ánh mắt lộ ra không muốn.
+
+- Oa nhi trưởng thành rồi, tự có phúc khí của nó.
+
+Cha Thiết Trụ cầm lấy tẩu hút thuốc, hút một ngụm thật sâu, trên mặt nếp nhăn, lập tức lại nhiều lên không ít.
+
+- Thiết Trụ, phải tranh phần hơn cho cha mẹ ngươi, nhất định phải được tuyển chọn. Nhị ca, nhị tẩu, gia tộc vài ngày sau sẽ có bữa tiệc lớn chúc mừng, hôm nay vội quá, ta sáng mai tới đón các ngươi cùng nhau đi qua, gia tộc ba cái oa nhi bị đề cử đi lên, khi đó sẽ kết quả rồi.
+
+Nói xong, hắn vội vàng lôi kéo Thiết Trụ lên xe ngựa, đánh lên ngựa một roi, nghênh ngang mà đi.
+
+Cha mẹ Thiết Trụ, vẫn nhìn xe ngựa nhanh chóng biến mất, rơi lệ không ngừng.
+
+- Cha nó, Thiết Trụ cho tới bây giờ chưa từng rời đi bên cạnh chúng ta, lần này hắn đi ra ngoài có thể hay không chịu khi dễ.
+
+Mẹ Thiết Trụ cắn môi dưới, ánh mắt lộ ra không muốn.
+
+- Oa nhi trưởng thành rồi, tự có phúc khí của nó.
+
+Cha Thiết Trụ cầm lấy tẩu hút thuốc, hút một ngụm thật sâu, trên mặt nếp nhăn, lập tức lại nhiều lên không ít.
+
+- Thiết Trụ, phải tranh phần hơn cho cha mẹ ngươi, nhất định phải được tuyển chọn. Nhị ca, nhị tẩu, gia tộc vài ngày sau sẽ có bữa tiệc lớn chúc mừng, hôm nay vội quá, ta sáng mai tới đón các ngươi cùng nhau đi qua, gia tộc ba cái oa nhi bị đề cử đi lên, khi đó sẽ kết quả rồi.
+
+Nói xong, hắn vội vàng lôi kéo Thiết Trụ lên xe ngựa, đánh lên ngựa một roi, nghênh ngang mà đi.
+
+Cha mẹ Thiết Trụ, vẫn nhìn xe ngựa nhanh chóng biến mất, rơi lệ không ngừng.
+
+- Cha nó, Thiết Trụ cho tới bây giờ chưa từng rời đi bên cạnh chúng ta, lần này hắn đi ra ngoài có thể hay không chịu khi dễ.
+
+Mẹ Thiết Trụ cắn môi dưới, ánh mắt lộ ra không muốn.
+
+- Oa nhi trưởng thành rồi, tự có phúc khí của nó.
+
+Cha Thiết Trụ cầm lấy tẩu hút thuốc, hút một ngụm thật sâu, trên mặt nếp nhăn, lập tức lại nhiều lên không ít.
+
+- Thiết Trụ, phải tranh phần hơn cho cha mẹ ngươi, nhất định phải được tuyển chọn. Nhị ca, nhị tẩu, gia tộc vài ngày sau sẽ có bữa tiệc lớn chúc mừng, hôm nay vội quá, ta sáng mai tới đón các ngươi cùng nhau đi qua, gia tộc ba cái oa nhi bị đề cử đi lên, khi đó sẽ kết quả rồi.
+
+Nói xong, hắn vội vàng lôi kéo Thiết Trụ lên xe ngựa, đánh lên ngựa một roi, nghênh ngang mà đi.
+
+Cha mẹ Thiết Trụ, vẫn nhìn xe ngựa nhanh chóng biến mất, rơi lệ không ngừng.
+
+- Cha nó, Thiết Trụ cho tới bây giờ chưa từng rời đi bên cạnh chúng ta, lần này hắn đi ra ngoài có thể hay không chịu khi dễ.
+
+Mẹ Thiết Trụ cắn môi dưới, ánh mắt lộ ra không muốn.
+
+- Oa nhi trưởng thành rồi, tự có phúc khí của nó.
+
+Cha Thiết Trụ cầm lấy tẩu hút thuốc, hút một ngụm thật sâu, trên mặt nếp nhăn, lập tức lại nhiều lên không ít.
+
+- Thiết Trụ, phải tranh phần hơn cho cha mẹ ngươi, nhất định phải được tuyển chọn. Nhị ca, nhị tẩu, gia tộc vài ngày sau sẽ có bữa tiệc lớn chúc mừng, hôm nay vội quá, ta sáng mai tới đón các ngươi cùng nhau đi qua, gia tộc ba cái oa nhi bị đề cử đi lên, khi đó sẽ kết quả rồi.
+
+Nói xong, hắn vội vàng lôi kéo Thiết Trụ lên xe ngựa, đánh lên ngựa một roi, nghênh ngang mà đi.
+
+Cha mẹ Thiết Trụ, vẫn nhìn xe ngựa nhanh chóng biến mất, rơi lệ không ngừng.
+
+- Cha nó, Thiết Trụ cho tới bây giờ chưa từng rời đi bên cạnh chúng ta, lần này hắn đi ra ngoài có thể hay không chịu khi dễ.
+
+Mẹ Thiết Trụ cắn môi dưới, ánh mắt lộ ra không muốn.
+
+- Oa nhi trưởng thành rồi, tự có phúc khí của nó.
+
+Cha Thiết Trụ cầm lấy tẩu hút thuốc, hút một ngụm thật sâu, trên mặt nếp nhăn, lập tức lại nhiều lên không ít.
+
+- Thiết Trụ, phải tranh phần hơn cho cha mẹ ngươi, nhất định phải được tuyển chọn. Nhị ca, nhị tẩu, gia tộc vài ngày sau sẽ có bữa tiệc lớn chúc mừng, hôm nay vội quá, ta sáng mai tới đón các ngươi cùng nhau đi qua, gia tộc ba cái oa nhi bị đề cử đi lên, khi đó sẽ kết quả rồi.
+
+Nói xong, hắn vội vàng lôi kéo Thiết Trụ lên xe ngựa, đánh lên ngựa một roi, nghênh ngang mà đi.
+
+Cha mẹ Thiết Trụ, vẫn nhìn xe ngựa nhanh chóng biến mất, rơi lệ không ngừng.
+
+- Cha nó, Thiết Trụ cho tới bây giờ chưa từng rời đi bên cạnh chúng ta, lần này hắn đi ra ngoài có thể hay không chịu khi dễ.
+
+Mẹ Thiết Trụ cắn môi dưới, ánh mắt lộ ra không muốn.
+
+- Oa nhi trưởng thành rồi, tự có phúc khí của nó.
+
+Cha Thiết Trụ cầm lấy tẩu hút thuốc, hút một ngụm thật sâu, trên mặt nếp nhăn, lập tức lại nhiều lên không ít.
+
+- Thiết Trụ, phải tranh phần hơn cho cha mẹ ngươi, nhất định phải được tuyển chọn. Nhị ca, nhị tẩu, gia tộc vài ngày sau sẽ có bữa tiệc lớn chúc mừng, hôm nay vội quá, ta sáng mai tới đón các ngươi cùng nhau đi qua, gia tộc ba cái oa nhi bị đề cử đi lên, khi đó sẽ kết quả rồi.
+
+Nói xong, hắn vội vàng lôi kéo Thiết Trụ lên xe ngựa, đánh lên ngựa một roi, nghênh ngang mà đi.
+
+Cha mẹ Thiết Trụ, vẫn nhìn xe ngựa nhanh chóng biến mất, rơi lệ không ngừng.
+
+- Cha nó, Thiết Trụ cho tới bây giờ chưa từng rời đi bên cạnh chúng ta, lần này hắn đi ra ngoài có thể hay không chịu khi dễ.
+
+Mẹ Thiết Trụ cắn môi dưới, ánh mắt lộ ra không muốn.
+
+- Oa nhi trưởng thành rồi, tự có phúc khí của nó.
+
+Cha Thiết Trụ cầm lấy tẩu hút thuốc, hút một ngụm thật sâu, trên mặt nếp nhăn, lập tức lại nhiều lên không ít.
+
+- Thiết Trụ, phải tranh phần hơn cho cha mẹ ngươi, nhất định phải được tuyển chọn. Nhị ca, nhị tẩu, gia tộc vài ngày sau sẽ có bữa tiệc lớn chúc mừng, hôm nay vội quá, ta sáng mai tới đón các ngươi cùng nhau đi qua, gia tộc ba cái oa nhi bị đề cử đi lên, khi đó sẽ kết quả rồi.
+
+Nói xong, hắn vội vàng lôi kéo Thiết Trụ lên xe ngựa, đánh lên ngựa một roi, nghênh ngang mà đi.
+
+Cha mẹ Thiết Trụ, vẫn nhìn xe ngựa nhanh chóng biến mất, rơi lệ không ngừng.
+
+- Cha nó, Thiết Trụ cho tới bây giờ chưa từng rời đi bên cạnh chúng ta, lần này hắn đi ra ngoài có thể hay không chịu khi dễ.
+
+Mẹ Thiết Trụ cắn môi dưới, ánh mắt lộ ra không muốn.
+
+- Oa nhi trưởng thành rồi, tự có phúc khí của nó.
+
+Cha Thiết Trụ cầm lấy tẩu hút thuốc, hút một ngụm thật sâu, trên mặt nếp nhăn, lập tức lại nhiều lên không ít.
+
+- Thiết Trụ, phải tranh phần hơn cho cha mẹ ngươi, nhất định phải được tuyển chọn. Nhị ca, nhị tẩu, gia tộc vài ngày sau sẽ có bữa tiệc lớn chúc mừng, hôm nay vội quá, ta sáng mai tới đón các ngươi cùng nhau đi qua, gia tộc ba cái oa nhi bị đề cử đi lên, khi đó sẽ kết quả rồi.
+
+Nói xong, hắn vội vàng lôi kéo Thiết Trụ lên xe ngựa, đánh lên ngựa một roi, nghênh ngang mà đi.
+
+Cha mẹ Thiết Trụ, vẫn nhìn xe ngựa nhanh chóng biến mất, rơi lệ không ngừng.
+
+- Cha nó, Thiết Trụ cho tới bây giờ chưa từng rời đi bên cạnh chúng ta, lần này hắn đi ra ngoài có thể hay không chịu khi dễ.
+
+Mẹ Thiết Trụ cắn môi dưới, ánh mắt lộ ra không muốn.
+
+- Oa nhi trưởng thành rồi, tự có phúc khí của nó.
+
+Cha Thiết Trụ cầm lấy tẩu hút thuốc, hút một ngụm thật sâu, trên mặt nếp nhăn, lập tức lại nhiều lên không ít.
+
+- Thiết Trụ, phải tranh phần hơn cho cha mẹ ngươi, nhất định phải được tuyển chọn. Nhị ca, nhị tẩu, gia tộc vài ngày sau sẽ có bữa tiệc lớn chúc mừng, hôm nay vội quá, ta sáng mai tới đón các ngươi cùng nhau đi qua, gia tộc ba cái oa nhi bị đề cử đi lên, khi đó sẽ kết quả rồi.
+
+Nói xong, hắn vội vàng lôi kéo Thiết Trụ lên xe ngựa, đánh lên ngựa một roi, nghênh ngang mà đi.
+
+Cha mẹ Thiết Trụ, vẫn nhìn xe ngựa nhanh chóng biến mất, rơi lệ không ngừng.
+
+- Cha nó, Thiết Trụ cho tới bây giờ chưa từng rời đi bên cạnh chúng ta, lần này hắn đi ra ngoài có thể hay không chịu khi dễ.
+
+Mẹ Thiết Trụ cắn môi dưới, ánh mắt lộ ra không muốn.
+
+- Oa nhi trưởng thành rồi, tự có phúc khí của nó.
+
+Cha Thiết Trụ cầm lấy tẩu hút thuốc, hút một ngụm thật sâu, trên mặt nếp nhăn, lập tức lại nhiều lên không ít.
+
+- Thiết Trụ, phải tranh phần hơn cho cha mẹ ngươi, nhất định phải được tuyển chọn. Nhị ca, nhị tẩu, gia tộc vài ngày sau sẽ có bữa tiệc lớn chúc mừng, hôm nay vội quá, ta sáng mai tới đón các ngươi cùng nhau đi qua, gia tộc ba cái oa nhi bị đề cử đi lên, khi đó sẽ kết quả rồi.
+
+Nói xong, hắn vội vàng lôi kéo Thiết Trụ lên xe ngựa, đánh lên ngựa một roi, nghênh ngang mà đi.
+
+Cha mẹ Thiết Trụ, vẫn nhìn xe ngựa nhanh chóng biến mất, rơi lệ không ngừng.
+
+- Cha nó, Thiết Trụ cho tới bây giờ chưa từng rời đi bên cạnh chúng ta, lần này hắn đi ra ngoài có thể hay không chịu khi dễ.
+
+Mẹ Thiết Trụ cắn môi dưới, ánh mắt lộ ra không muốn.
+
+- Oa nhi trưởng thành rồi, tự có phúc khí của nó.
+
+Cha Thiết Trụ cầm lấy tẩu hút thuốc, hút một ngụm thật sâu, trên mặt nếp nhăn, lập tức lại nhiều lên không ít.
+
+- Thiết Trụ, phải tranh phần hơn cho cha mẹ ngươi, nhất định phải được tuyển chọn. Nhị ca, nhị tẩu, gia tộc vài ngày sau sẽ có bữa tiệc lớn chúc mừng, hôm nay vội quá, ta sáng mai tới đón các ngươi cùng nhau đi qua, gia tộc ba cái oa nhi bị đề cử đi lên, khi đó sẽ kết quả rồi.
+
+Nói xong, hắn vội vàng lôi kéo Thiết Trụ lên xe ngựa, đánh lên ngựa một roi, nghênh ngang mà đi.
+
+Cha mẹ Thiết Trụ, vẫn nhìn xe ngựa nhanh chóng biến mất, rơi lệ không ngừng.
+
+- Cha nó, Thiết Trụ cho tới bây giờ chưa từng rời đi bên cạnh chúng ta, lần này hắn đi ra ngoài có thể hay không chịu khi dễ.
+
+Mẹ Thiết Trụ cắn môi dưới, ánh mắt lộ ra không muốn.
+
+- Oa nhi trưởng thành rồi, tự có phúc khí của nó.
+
+Cha Thiết Trụ cầm lấy tẩu hút thuốc, hút một ngụm thật sâu, trên mặt nếp nhăn, lập tức lại nhiều lên không ít.
+
+- Thiết Trụ, phải tranh phần hơn cho cha mẹ ngươi, nhất định phải được tuyển chọn. Nhị ca, nhị tẩu, gia tộc vài ngày sau sẽ có bữa tiệc lớn chúc mừng, hôm nay vội quá, ta sáng mai tới đón các ngươi cùng nhau đi qua, gia tộc ba cái oa nhi bị đề cử đi lên, khi đó sẽ kết quả rồi.
+
+Nói xong, hắn vội vàng lôi kéo Thiết Trụ lên xe ngựa, đánh lên ngựa một roi, nghênh ngang mà đi.
+
+Cha mẹ Thiết Trụ, vẫn nhìn xe ngựa nhanh chóng biến mất, rơi lệ không ngừng.
+
+- Cha nó, Thiết Trụ cho tới bây giờ chưa từng rời đi bên cạnh chúng ta, lần này hắn đi ra ngoài có thể hay không chịu khi dễ.
+
+Mẹ Thiết Trụ cắn môi dưới, ánh mắt lộ ra không muốn.
+
+- Oa nhi trưởng thành rồi, tự có phúc khí của nó.
+
+Cha Thiết Trụ cầm lấy tẩu hút thuốc, hút một ngụm thật sâu, trên mặt nếp nhăn, lập tức lại nhiều lên không ít.
+
+- Thiết Trụ, phải tranh phần hơn cho cha mẹ ngươi, nhất định phải được tuyển chọn. Nhị ca, nhị tẩu, gia tộc vài ngày sau sẽ có bữa tiệc lớn chúc mừng, hôm nay vội quá, ta sáng mai tới đón các ngươi cùng nhau đi qua, gia tộc ba cái oa nhi bị đề cử đi lên, khi đó sẽ kết quả rồi.
+
+Nói xong, hắn vội vàng lôi kéo Thiết Trụ lên xe ngựa, đánh lên ngựa một roi, nghênh ngang mà đi.
+
+Cha mẹ Thiết Trụ, vẫn nhìn xe ngựa nhanh chóng biến mất, rơi lệ không ngừng.
+
+- Cha nó, Thiết Trụ cho tới bây giờ chưa từng rời đi bên cạnh chúng ta, lần này hắn đi ra ngoài có thể hay không chịu khi dễ.
+
+Mẹ Thiết Trụ cắn môi dưới, ánh mắt lộ ra không muốn.
+
+- Oa nhi trưởng thành rồi, tự có phúc khí của nó.
+
+Cha Thiết Trụ cầm lấy tẩu hút thuốc, hút một ngụm thật sâu, trên mặt nếp nhăn, lập tức lại nhiều lên không ít.
+
+- Thiết Trụ, phải tranh phần hơn cho cha mẹ ngươi, nhất định phải được tuyển chọn. Nhị ca, nhị tẩu, gia tộc vài ngày sau sẽ có bữa tiệc lớn chúc mừng, hôm nay vội quá, ta sáng mai tới đón các ngươi cùng nhau đi qua, gia tộc ba cái oa nhi bị đề cử đi lên, khi đó sẽ kết quả rồi.
+
+Nói xong, hắn vội vàng lôi kéo Thiết Trụ lên xe ngựa, đánh lên ngựa một roi, nghênh ngang mà đi.
+
+Cha mẹ Thiết Trụ, vẫn nhìn xe ngựa nhanh chóng biến mất, rơi lệ không ngừng.
+
+- Cha nó, Thiết Trụ cho tới bây giờ chưa từng rời đi bên cạnh chúng ta, lần này hắn đi ra ngoài có thể hay không chịu khi dễ.
+
+Mẹ Thiết Trụ cắn môi dưới, ánh mắt lộ ra không muốn.
+
+- Oa nhi trưởng thành rồi, tự có phúc khí của nó.
+
+Cha Thiết Trụ cầm lấy tẩu hút thuốc, hút một ngụm thật sâu, trên mặt nếp nhăn, lập tức lại nhiều lên không ít.
+
+- Thiết Trụ, phải tranh phần hơn cho cha mẹ ngươi, nhất định phải được tuyển chọn. Nhị ca, nhị tẩu, gia tộc vài ngày sau sẽ có bữa tiệc lớn chúc mừng, hôm nay vội quá, ta sáng mai tới đón các ngươi cùng nhau đi qua, gia tộc ba cái oa nhi bị đề cử đi lên, khi đó sẽ kết quả rồi.
+
+Nói xong, hắn vội vàng lôi kéo Thiết Trụ lên xe ngựa, đánh lên ngựa một roi, nghênh ngang mà đi.
+
+Cha mẹ Thiết Trụ, vẫn nhìn xe ngựa nhanh chóng biến mất, rơi lệ không ngừng.
+
+- Cha nó, Thiết Trụ cho tới bây giờ chưa từng rời đi bên cạnh chúng ta, lần này hắn đi ra ngoài có thể hay không chịu khi dễ.
+
+Mẹ Thiết Trụ cắn môi dưới, ánh mắt lộ ra không muốn.
+
+- Oa nhi trưởng thành rồi, tự có phúc khí của nó.
+
+Cha Thiết Trụ cầm lấy tẩu hút thuốc, hút một ngụm thật sâu, trên mặt nếp nhăn, lập tức lại nhiều lên không ít.
+
+- Thiết Trụ, phải tranh phần hơn cho cha mẹ ngươi, nhất định phải được tuyển chọn. Nhị ca, nhị tẩu, gia tộc vài ngày sau sẽ có bữa tiệc lớn chúc mừng, hôm nay vội quá, ta sáng mai tới đón các ngươi cùng nhau đi qua, gia tộc ba cái oa nhi bị đề cử đi lên, khi đó sẽ kết quả rồi.
+
+Nói xong, hắn vội vàng lôi kéo Thiết Trụ lên xe ngựa, đánh lên ngựa một roi, nghênh ngang mà đi.
+
+Cha mẹ Thiết Trụ, vẫn nhìn xe ngựa nhanh chóng biến mất, rơi lệ không ngừng.
+
+- Cha nó, Thiết Trụ cho tới bây giờ chưa từng rời đi bên cạnh chúng ta, lần này hắn đi ra ngoài có thể hay không chịu khi dễ.
+
+Mẹ Thiết Trụ cắn môi dưới, ánh mắt lộ ra không muốn.
+
+- Oa nhi trưởng thành rồi, tự có phúc khí của nó.
+- 
