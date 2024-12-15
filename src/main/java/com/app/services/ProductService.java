@@ -1,16 +1,13 @@
 package com.app.services;
 
+
+import com.app.dtos.ProductDTO;
 import com.app.exceptions.DataNotFoundException;
-import com.app.exceptions.InvalidParamException;
 import com.app.models.Category;
 import com.app.models.Product;
-import com.app.models.ProductImage;
 import com.app.repositories.CategoryRepository;
 import com.app.repositories.ProductImageRepository;
 import com.app.repositories.ProductRepository;
-import com.project.shopapp.dto.ProductDTO;
-import com.project.shopapp.dto.ProductImageDTO;
-
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -18,7 +15,6 @@ import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -48,8 +44,7 @@ public class ProductService {
         return productRepository.findById(id).orElseThrow(() -> new DataNotFoundException("Cannot find product with id: " + id));
     }
 
-    public Page<Product> searchProducts(String name, Double minPrice, Double maxPrice,
-                                        String description, List<Long> categoryIds,
+    public Page<Product> searchProducts(String name, List<Long> categoryIds,
                                         String sortOrder, int page, int limit) {
 
         Sort sort = Sort.by(sortOrder);
@@ -62,12 +57,11 @@ public class ProductService {
         }
 
         PageRequest pageRequest = PageRequest.of(page, limit, sort);
-        return productRepository.findProductsByFilters(name, minPrice, maxPrice, description, categoryIds, pageRequest);
+        return productRepository.findProductsByFilters(name, categoryIds, pageRequest);
     }
 
 
     public List<Product> getAllProducts() {
-        //Lấy danh sách sản paharm theo trang (page) giới hạn (limit)
         return productRepository.findAll();
     }
 
@@ -90,10 +84,11 @@ public class ProductService {
     }
 
 
-    public void deleteProduct(Long id) {
+    public void deleteProduct(Long id) throws DataNotFoundException {
         //Tim san pham theo ID
-        Optional<Product> productOptional = productRepository.findById(id);
-        productOptional.ifPresent(productRepository::delete);
+        Product product = getProduct(id);
+        product.setActive(false);
+        productRepository.save(product);
     }
 
 

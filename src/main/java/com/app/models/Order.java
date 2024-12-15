@@ -1,4 +1,4 @@
-package com.project.shopapp.model;
+package com.app.models;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
