@@ -1,18 +1,19 @@
 package com.app.services;
 
 import com.app.dtos.OrderDTO;
-import com.app.responses.OrderResponse;
+import com.app.exceptions.DataNotFoundException;
+import com.app.models.Order;
 
 import java.util.List;
 
 public interface IOrderService {
-    OrderResponse createOrder(OrderDTO orderDto);
+    Order createOrder(OrderDTO orderDto) throws Exception;
 
-    OrderResponse getOrder(Long id);
+    Order getOrder(Long id) throws DataNotFoundException;
 
-    OrderResponse updateOrder(Long id, OrderDTO orderDto);
+    Order updateOrder(Long id, OrderDTO orderDto) throws DataNotFoundException;
 
-    OrderResponse deleteOrder(Long id);
+    void deleteOrder(Long id);
 
-    List<OrderResponse> getAllOrders(Long userId);
+    List<Order> findByUserId(Long Id);
 }

@@ -1,21 +1,28 @@
 package com.app.services;
 
 import com.app.dtos.ProductDTO;
+import com.app.dtos.ProductImageDTO;
 import com.app.exceptions.DataNotFoundException;
+import com.app.exceptions.InvalidParamException;
 import com.app.models.Product;
+import com.app.models.ProductImage;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 
+import java.util.List;
+
 public interface IProductService {
-    public Product createProduct(ProductDTO productDTO) throws DataNotFoundException;
+    Product createProduct(ProductDTO productDTO) throws DataNotFoundException;
 
-    Product getProductById(long id) throws Exception;
+    Product getProduct(Long id) throws DataNotFoundException;
 
-    Page<Product> getAllProduct(PageRequest pageRequest);
+    List<Product> getAllProducts();
 
-    Product updateProduct(long id, ProductDTO productDTO) throws Exception;
+    Product updateProduct(Long id, ProductDTO productDTO) throws DataNotFoundException;
 
-    void deleteProduct(long id);
+    void deleteProduct(Long id);
+
+    ProductImage createProductImage(Long productId, ProductImageDTO productImageDTO) throws DataNotFoundException, InvalidParamException;
 
     boolean existsByName(String name);
 }

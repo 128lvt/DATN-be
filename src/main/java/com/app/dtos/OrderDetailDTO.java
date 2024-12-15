@@ -1,17 +1,10 @@
-package com.app.dtos;
+package com.project.shopapp.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.validation.constraints.Min;
-import lombok.*;
+import lombok.Data;
 
 @Data
-@Builder
-@AllArgsConstructor
-@NoArgsConstructor
-@Getter
-@Setter
-
-
 public class OrderDetailDTO {
     @JsonProperty("order_id")
     @Min(value = 1, message = "Order's ID must be > 0")
@@ -25,9 +18,9 @@ public class OrderDetailDTO {
     @Min(value = 1, message = "number_of_products ID must be >= 1")
     private int numberOfProducts;
 
-    @JsonProperty("total_money")
-    @Min(value = 0, message = "total_money must be >= 0")
-    private Double totalMoney;
+//    @JsonProperty("total_money")
+//    @Min(value = 0, message = "total_money must be >= 0")
+//    private Double totalMoney;
 
     @JsonProperty("variant_id")
     private Long variantId;
